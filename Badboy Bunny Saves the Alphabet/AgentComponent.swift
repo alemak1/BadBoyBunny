@@ -207,6 +207,10 @@ class AgentComponent: GKComponent, GKAgentDelegate{
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
+        //guard let renderNode = renderNode else { return }
+        
+        if(isAgentDriven){
+        
         if !hasReachedGoal{
             print("Updating agent...")
             entityAgent.update(deltaTime: seconds)
@@ -218,16 +222,13 @@ class AgentComponent: GKComponent, GKAgentDelegate{
                 hasReachedGoal = false
                 print("hasReached goal reset to false")
                 
-               // entityAgent = GKAgent2D()
-                
-               // if let targetAgent = targetAgent{
-                //    let goal = GKGoal(toInterceptAgent: targetAgent, maxPredictionTime: 2.00)
-                //    entityAgent.behavior = GKBehavior(goal: goal, weight: 1.00)
-               // }
+    
                 frameCount = 0
+                }
             }
+        } else {
+            entityAgent.update(deltaTime: seconds)
         }
-        
     }
 }
 
