@@ -84,6 +84,8 @@ class Player: GKEntity{
         renderComponent.node.yScale *= 0.50
         
        
+        let healthComponent = HealthComponent(startingHealth: 3)
+        addComponent(healthComponent)
         
         NotificationCenter.default.addObserver(self, selector: #selector(Player.swapMotionResponderComponen(notification:)), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
     }

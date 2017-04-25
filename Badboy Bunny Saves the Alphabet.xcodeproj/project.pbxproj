@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD2ED78E1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED78D1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift */; };
+		BD2ED7901EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED78F1EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift */; };
+		BD2ED7921EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED7911EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift */; };
+		BD2ED7941EAF3016001E8A48 /* PlatformerLevelScenePauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED7931EAF3016001E8A48 /* PlatformerLevelScenePauseState.swift */; };
+		BD2ED7961EAF3304001E8A48 /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED7951EAF3304001E8A48 /* HealthComponent.swift */; };
 		BD3996B41EAF0FA5008D0650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996B31EAF0FA5008D0650 /* AppDelegate.swift */; };
 		BD3996BF1EAF0FA5008D0650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3996BD1EAF0FA5008D0650 /* Main.storyboard */; };
 		BD3996C11EAF0FA5008D0650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD3996C01EAF0FA5008D0650 /* Assets.xcassets */; };
@@ -54,6 +59,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD2ED78D1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneActive.swift; sourceTree = "<group>"; };
+		BD2ED78F1EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneFailState.swift; sourceTree = "<group>"; };
+		BD2ED7911EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneSuccessState.swift; sourceTree = "<group>"; };
+		BD2ED7931EAF3016001E8A48 /* PlatformerLevelScenePauseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelScenePauseState.swift; sourceTree = "<group>"; };
+		BD2ED7951EAF3304001E8A48 /* HealthComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
 		BD3996B01EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Badboy Bunny Saves the Alphabet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3996B31EAF0FA5008D0650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3996BE1EAF0FA5008D0650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +123,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD2ED78C1EAF2F9C001E8A48 /* SceneStates */ = {
+			isa = PBXGroup;
+			children = (
+				BD2ED78D1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift */,
+				BD2ED78F1EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift */,
+				BD2ED7911EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift */,
+				BD2ED7931EAF3016001E8A48 /* PlatformerLevelScenePauseState.swift */,
+			);
+			name = SceneStates;
+			sourceTree = "<group>";
+		};
 		BD3996A71EAF0FA5008D0650 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +183,7 @@
 				BD3996CE1EAF0FED008D0650 /* NodeNameComponent.swift */,
 				BD3996D01EAF0FED008D0650 /* OrientationComponent.swift */,
 				BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */,
+				BD2ED7951EAF3304001E8A48 /* HealthComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -210,6 +232,7 @@
 		BD3996F31EAF10A1008D0650 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BD2ED78C1EAF2F9C001E8A48 /* SceneStates */,
 				BD3997061EAF1110008D0650 /* PhysicsContactUtility.swift */,
 				BD3997071EAF1110008D0650 /* PlatformerBaseScene.swift */,
 				BD3996F41EAF10B3008D0650 /* BaseScene.swift */,
@@ -317,14 +340,17 @@
 				BD39971D1EAF15E3008D0650 /* Background.swift in Sources */,
 				BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */,
 				BD39970B1EAF1110008D0650 /* PlatformerEntityManager.swift in Sources */,
+				BD2ED78E1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift in Sources */,
 				BD3996F01EAF108E008D0650 /* GameViewController.swift in Sources */,
 				BD3996F71EAF10B3008D0650 /* BaseScene.swift in Sources */,
 				BD3996D31EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift in Sources */,
 				BD3996F21EAF109B008D0650 /* Blade.swift in Sources */,
+				BD2ED7901EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift in Sources */,
 				BD3996FB1EAF10CF008D0650 /* Island.swift in Sources */,
 				BD3997191EAF116A008D0650 /* AnimationComponent.swift in Sources */,
 				BD39970D1EAF1122008D0650 /* RenderComponent.swift in Sources */,
 				BD3997091EAF1110008D0650 /* PhysicsContactUtility.swift in Sources */,
+				BD2ED7921EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift in Sources */,
 				BD3996D61EAF0FED008D0650 /* OrientationComponent.swift in Sources */,
 				BD3997151EAF1142008D0650 /* Player.swift in Sources */,
 				BD39970A1EAF1110008D0650 /* PlatformerBaseScene.swift in Sources */,
@@ -332,11 +358,13 @@
 				BD3996D21EAF0FED008D0650 /* JumpComponent.swift in Sources */,
 				BD3996D91EAF1000008D0650 /* PhysicsComponent.swift in Sources */,
 				BD3997121EAF1136008D0650 /* SKNodeExtension.swift in Sources */,
+				BD2ED7941EAF3016001E8A48 /* PlatformerLevelScenePauseState.swift in Sources */,
 				BD3996F81EAF10B3008D0650 /* BaseScene+Pause.swift in Sources */,
 				BD3996EE1EAF1082008D0650 /* CoreMotionInputComponent.swift in Sources */,
 				BD3996B41EAF0FA5008D0650 /* AppDelegate.swift in Sources */,
 				BD3997111EAF1136008D0650 /* RandomGenerator.swift in Sources */,
 				BD3996EC1EAF1079008D0650 /* CoreMotionHelper.swift in Sources */,
+				BD2ED7961EAF3304001E8A48 /* HealthComponent.swift in Sources */,
 				BD3996D71EAF0FED008D0650 /* OscillatorComponent.swift in Sources */,
 				BD3997011EAF10E8008D0650 /* MainMotionManager.swift in Sources */,
 				BD3996E61EAF106A008D0650 /* CollisionConfiguration.swift in Sources */,
@@ -508,6 +536,7 @@
 				BD3996CA1EAF0FA5008D0650 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

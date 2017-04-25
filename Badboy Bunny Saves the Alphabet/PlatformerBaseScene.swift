@@ -20,6 +20,14 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
     
     private var lastUpdateTime : TimeInterval = 0
  
+    var letterFound: Bool = false
+    
+    lazy var stateMachine : GKStateMachine = GKStateMachine(states: [
+        PlatformerLevelSceneFailState(levelScene: self),
+        PlatformerLevelSceneActiveState(levelScene: self),
+        PlatformerLevelSceneSuccessState(levelScene: self),
+        PlatformerLevelScenePauseState(levelScene: self)
+        ])
     
     override func sceneDidLoad() {
         
@@ -289,10 +297,16 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         
         let otherBody = (contact.bodyA.contactTestBitMask & CollisionConfiguration.Player.contactMask > 0) ? contact.bodyB : contact.bodyA
         
-        switch(otherBody.contactTestBitMask){
-            case CollisionConfiguration.Barrier.contactMask:
+        switch(otherBody.categoryBitMask){
+            case CollisionConfiguration.Barrier.categoryMask:
               //  NotificationCenter.default.post(name: Notification.Name.PlayerStartedBarrierContactNotification, object: nil, userInfo: nil)
               
+                break
+            case CollisionConfiguration.Letter.categoryMask:
+                otherBody.node?.removeFromParent()
+                letterFound = true
+                break
+            case CollisionConfiguration.Enemy.categoryMask:
                 break
             default:
                 break

@@ -18,4 +18,5 @@ extension Notification.Name{
     static let PlayerDidContactLetterNotification = Notification.Name(rawValue: "playerDidContactLetterNotification")
     static let PlayerStartedBarrierContactNotification = Notification.Name(rawValue: "playerStartedBarrierContactNotification")
     static let PlayerStoppedBarrierContactNotification = Notification.Name(rawValue: "playerStoppedBarrierContactNotification")
+    static let PlayerDidTakeDamageNotification = Notification.Name(rawValue: "playerDidTakeDamageNotification")
 }
