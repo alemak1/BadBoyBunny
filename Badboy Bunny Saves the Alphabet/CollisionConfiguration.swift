@@ -83,7 +83,7 @@ extension CollisionConfiguration: OptionSet{
         CollisionConfiguration.Barrier : [CollisionConfiguration.Player],
         CollisionConfiguration.NonCollidingEnemy:
             [CollisionConfiguration.Player],
-        CollisionConfiguration.Letter : [ /** CollisionConfiguration.Player, **/CollisionConfiguration.Barrier],
+        CollisionConfiguration.Letter : [ CollisionConfiguration.Player, CollisionConfiguration.Barrier],
         CollisionConfiguration.Portal :      [CollisionConfiguration.Player],
         CollisionConfiguration.Island : [CollisionConfiguration.NoCategory]
     ]

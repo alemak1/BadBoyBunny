@@ -31,4 +31,9 @@ class PlatformerLevelSceneFailState: GKState{
         
         return false
     }
+    
+    override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
+        print("Player is now in the fail state...")
+    }
 }

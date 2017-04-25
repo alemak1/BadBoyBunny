@@ -33,7 +33,9 @@ class EntityManager{
         
         let oscillatorComponent = GKComponentSystem(componentClass: OscillatorComponent.self)
         
-        return [renderComponent, portraitMotionResponderComponentX,orientationComponent, animationComponent, agentComponent, jumpComponent]
+        let healthComponent = GKComponentSystem(componentClass: HealthComponent.self)
+        
+        return [renderComponent, portraitMotionResponderComponentX,orientationComponent, animationComponent, agentComponent, jumpComponent, healthComponent]
     }()
     
     

@@ -16,6 +16,11 @@ class HealthComponent: GKComponent{
     
     let startingHealth: Int
     var currentHealth: Int
+    var isInvulnerable: Bool = false
+    
+    var invulnerabilityInterval: TimeInterval = 6.00
+    var frameCount: TimeInterval = 0.00
+    var lastUpdateTime: TimeInterval = 0.00
     
     init(startingHealth: Int){
         self.startingHealth = startingHealth
@@ -36,8 +41,35 @@ class HealthComponent: GKComponent{
  
     **/
     func playerTakesDamage(notification: Notification){
+        if isInvulnerable {
+            print("No damage: player is temporarily invulnerable")
+            return }
+        
+        print("Player health decreasing by -1")
         currentHealth -= 1
+        
+        isInvulnerable = true
     }
+    
+    override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
+        
+       
+        
+        if isInvulnerable{
+            frameCount += seconds
+            print("Invulnerability frameCount is \(frameCount)")
+            if(frameCount > invulnerabilityInterval){
+                isInvulnerable = false
+                frameCount = 0
+            }
+            
+        }
+        
+
+    }
+    
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)

@@ -142,6 +142,14 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
                 
+                if node.name == "Alien"{
+                    let positionVal = node.userData?.value(forKey: "position") as! NSValue
+                    let position = positionVal.cgPointValue
+                    
+                    let alienEntity = Alien(alienColor: .Pink, position: position, targetAgent: nil)
+                    entityManager.addToWorld(alienEntity)
+                }
+                
                 if node.name == "EnemySun"{
                     
                     let positionVal = node.userData?.value(forKey: "position") as! NSValue
@@ -195,6 +203,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
             entityManager.addToEntitySet(entity)
         }
         
+        stateMachine.enter(PlatformerLevelSceneActiveState.self)
     }
     
     
@@ -243,6 +252,8 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
+        
+        stateMachine.update(deltaTime: currentTime)
       
         
         entityManager.update(dt)
@@ -303,10 +314,13 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
               
                 break
             case CollisionConfiguration.Letter.categoryMask:
+                print("Player contacted the Letter")
                 otherBody.node?.removeFromParent()
                 letterFound = true
                 break
             case CollisionConfiguration.Enemy.categoryMask:
+                print("Sending player damage notification...")
+                NotificationCenter.default.post(name: Notification.Name.PlayerDidTakeDamageNotification, object: nil, userInfo: nil)
                 break
             default:
                 break

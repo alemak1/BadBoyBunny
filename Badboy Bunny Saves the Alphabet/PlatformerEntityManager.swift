@@ -37,7 +37,9 @@ class PlatformerEntityManager{
         
         let agentComponent = GKComponentSystem(componentClass: AgentComponent.self)
         
-        return [renderComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent]
+        let healthComponent = GKComponentSystem(componentClass: HealthComponent.self)
+        
+        return [renderComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent]
     
     }()
     

@@ -56,6 +56,8 @@
 		BD39971B1EAF15AA008D0650 /* InProgressWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971A1EAF15AA008D0650 /* InProgressWord.swift */; };
 		BD39971D1EAF15E3008D0650 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971C1EAF15E3008D0650 /* Background.swift */; };
 		BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */; };
+		BD3D27FF1EAF56BD00697F26 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D27FE1EAF56BD00697F26 /* Alien.swift */; };
+		BD3D28011EAF5B0D00697F26 /* LaserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		BD39971A1EAF15AA008D0650 /* InProgressWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InProgressWord.swift; sourceTree = "<group>"; };
 		BD39971C1EAF15E3008D0650 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionResponderComponent.swift; sourceTree = "<group>"; };
+		BD3D27FE1EAF56BD00697F26 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alien.swift; sourceTree = "<group>"; };
+		BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 				BD3996D01EAF0FED008D0650 /* OrientationComponent.swift */,
 				BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */,
 				BD2ED7951EAF3304001E8A48 /* HealthComponent.swift */,
+				BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				BD3996FA1EAF10CF008D0650 /* Island.swift */,
 				BD3996F11EAF109B008D0650 /* Blade.swift */,
 				BD3996E31EAF1065008D0650 /* EnemySun.swift */,
+				BD3D27FE1EAF56BD00697F26 /* Alien.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */,
 				BD39970B1EAF1110008D0650 /* PlatformerEntityManager.swift in Sources */,
 				BD2ED78E1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift in Sources */,
+				BD3D28011EAF5B0D00697F26 /* LaserComponent.swift in Sources */,
 				BD3996F01EAF108E008D0650 /* GameViewController.swift in Sources */,
 				BD3996F71EAF10B3008D0650 /* BaseScene.swift in Sources */,
 				BD3996D31EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift in Sources */,
@@ -353,6 +360,7 @@
 				BD2ED7921EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift in Sources */,
 				BD3996D61EAF0FED008D0650 /* OrientationComponent.swift in Sources */,
 				BD3997151EAF1142008D0650 /* Player.swift in Sources */,
+				BD3D27FF1EAF56BD00697F26 /* Alien.swift in Sources */,
 				BD39970A1EAF1110008D0650 /* PlatformerBaseScene.swift in Sources */,
 				BD3996E81EAF106E008D0650 /* Constants.swift in Sources */,
 				BD3996D21EAF0FED008D0650 /* JumpComponent.swift in Sources */,
