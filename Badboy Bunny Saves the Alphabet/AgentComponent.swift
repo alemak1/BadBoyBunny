@@ -12,11 +12,15 @@ import SpriteKit
 
 class AgentComponent: GKComponent, GKAgentDelegate{
     
-    let entityAgent = GKAgent2D()
+    var entityAgent = GKAgent2D()
     var renderNode: SKSpriteNode?
     var isAgentDriven: Bool = false
     var lerpingEnabled: Bool = false
     var targetAgent: GKAgent2D?
+    var hasReachedGoal: Bool = false
+    
+    var frameCount: TimeInterval = 0.00
+    var restInterval: TimeInterval = 6.00
     
     convenience init(passiveAgent: GKAgent2D, lerpingEnabled: Bool = false) {
         self.init()
@@ -95,16 +99,35 @@ class AgentComponent: GKComponent, GKAgentDelegate{
         }
         
         
-       
-        let adjustmentFunction: (Void) -> (Void) = lerpingEnabled ?
-            { renderNode.lerpToPoint(agentPosition: agent.position, withLerpFactor: 0.10)
-            renderNode.physicsBody?.lerpToVelocity(agentVelocity: agent.velocity, withLerpFactor: 0.10)}
-            :
-            {   renderNode.position = agent.position.getCGPoint()
-                renderNode.physicsBody?.velocity = agent.velocity.getCGVector() }
+        if !hasReachedGoal{
+            
+            print("Trying to attack target again...")
+            let adjustmentFunction: (Void) -> (Void) = lerpingEnabled ?
+                {
+                    print("Lerping to target position...")
+                    renderNode.lerpToPoint(agentPosition: agent.position, withLerpFactor: 0.1)
+                   
+                    /** This causes an uncaught exception for some reason:
+                     
+                     renderNode.physicsBody?.lerpToVelocity(agentVelocity: agent.velocity, withLerpFactor: 0.10) **/}
+                :
+                {
+                    print("Lerping to target position...")
+                    renderNode.position = agent.position.getCGPoint()
+                   /** renderNode.physicsBody?.velocity = agent.velocity.getCGVector() **/ }
         
         
-        adjustmentFunction()
+            adjustmentFunction()
+            
+            if let targetAgent = targetAgent{
+                if( abs(agent.position.getDistanceToPoint(otherPoint: targetAgent.position)) < 10.00){
+                    hasReachedGoal = true
+                    print("Goal has been reached")
+                    
+                }
+            }
+        
+        }
         
         /**
         guard let targetAgent = self.targetAgent else {
@@ -184,7 +207,26 @@ class AgentComponent: GKComponent, GKAgentDelegate{
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
-        entityAgent.update(deltaTime: seconds)
+        if !hasReachedGoal{
+            print("Updating agent...")
+            entityAgent.update(deltaTime: seconds)
+        } else {
+            print("Running time until next agent-initiated behavior starts...")
+            frameCount += seconds
+            
+            if frameCount > restInterval{
+                hasReachedGoal = false
+                print("hasReached goal reset to false")
+                
+               // entityAgent = GKAgent2D()
+                
+               // if let targetAgent = targetAgent{
+                //    let goal = GKGoal(toInterceptAgent: targetAgent, maxPredictionTime: 2.00)
+                //    entityAgent.behavior = GKBehavior(goal: goal, weight: 1.00)
+               // }
+                frameCount = 0
+            }
+        }
         
     }
 }

@@ -42,7 +42,7 @@ class HealthComponent: GKComponent{
     **/
     func playerTakesDamage(notification: Notification){
         if isInvulnerable {
-            print("No damage: player is temporarily invulnerable")
+           // print("No damage: player is temporarily invulnerable")
             return }
         
         print("Player health decreasing by -1")
@@ -58,7 +58,7 @@ class HealthComponent: GKComponent{
         
         if isInvulnerable{
             frameCount += seconds
-            print("Invulnerability frameCount is \(frameCount)")
+            //print("Invulnerability frameCount is \(frameCount)")
             if(frameCount > invulnerabilityInterval){
                 isInvulnerable = false
                 frameCount = 0

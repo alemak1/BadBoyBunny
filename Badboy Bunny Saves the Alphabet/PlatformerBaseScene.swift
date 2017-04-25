@@ -146,7 +146,11 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
                     let positionVal = node.userData?.value(forKey: "position") as! NSValue
                     let position = positionVal.cgPointValue
                     
-                    let alienEntity = Alien(alienColor: .Pink, position: position, targetAgent: nil)
+                    let player = entityManager.getPlayerEntities().first!
+                    
+                    guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else { break }
+                    
+                    let alienEntity = Alien(alienColor: .Pink, position: position, targetAgent: playerAgent)
                     entityManager.addToWorld(alienEntity)
                 }
                 
