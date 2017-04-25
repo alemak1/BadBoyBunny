@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD3996B41EAF0FA5008D0650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996B31EAF0FA5008D0650 /* AppDelegate.swift */; };
+		BD3996BF1EAF0FA5008D0650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3996BD1EAF0FA5008D0650 /* Main.storyboard */; };
+		BD3996C11EAF0FA5008D0650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD3996C01EAF0FA5008D0650 /* Assets.xcassets */; };
+		BD3996C41EAF0FA5008D0650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3996C21EAF0FA5008D0650 /* LaunchScreen.storyboard */; };
+		BD3996D21EAF0FED008D0650 /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996CC1EAF0FED008D0650 /* JumpComponent.swift */; };
+		BD3996D31EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996CD1EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift */; };
+		BD3996D41EAF0FED008D0650 /* NodeNameComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996CE1EAF0FED008D0650 /* NodeNameComponent.swift */; };
+		BD3996D51EAF0FED008D0650 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996CF1EAF0FED008D0650 /* NotificationNameExtension.swift */; };
+		BD3996D61EAF0FED008D0650 /* OrientationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996D01EAF0FED008D0650 /* OrientationComponent.swift */; };
+		BD3996D71EAF0FED008D0650 /* OscillatorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */; };
+		BD3996D91EAF1000008D0650 /* PhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996D81EAF1000008D0650 /* PhysicsComponent.swift */; };
+		BD3996DC1EAF1013008D0650 /* IslandScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD3996DB1EAF1013008D0650 /* IslandScene.sks */; };
+		BD3996DE1EAF1033008D0650 /* GroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996DD1EAF1033008D0650 /* GroundComponent.swift */; };
+		BD3996E21EAF104C008D0650 /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996E11EAF104C008D0650 /* EntityManager.swift */; };
+		BD3996E41EAF1065008D0650 /* EnemySun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996E31EAF1065008D0650 /* EnemySun.swift */; };
+		BD3996E61EAF106A008D0650 /* CollisionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996E51EAF106A008D0650 /* CollisionConfiguration.swift */; };
+		BD3996E81EAF106E008D0650 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996E71EAF106E008D0650 /* Constants.swift */; };
+		BD3996EA1EAF1074008D0650 /* ContactHandlerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996E91EAF1074008D0650 /* ContactHandlerComponent.swift */; };
+		BD3996EC1EAF1079008D0650 /* CoreMotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996EB1EAF1079008D0650 /* CoreMotionHelper.swift */; };
+		BD3996EE1EAF1082008D0650 /* CoreMotionInputComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996ED1EAF1082008D0650 /* CoreMotionInputComponent.swift */; };
+		BD3996F01EAF108E008D0650 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996EF1EAF108E008D0650 /* GameViewController.swift */; };
+		BD3996F21EAF109B008D0650 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996F11EAF109B008D0650 /* Blade.swift */; };
+		BD3996F71EAF10B3008D0650 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996F41EAF10B3008D0650 /* BaseScene.swift */; };
+		BD3996F81EAF10B3008D0650 /* BaseScene+Pause.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996F51EAF10B3008D0650 /* BaseScene+Pause.swift */; };
+		BD3996F91EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996F61EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift */; };
+		BD3996FB1EAF10CF008D0650 /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996FA1EAF10CF008D0650 /* Island.swift */; };
+		BD3996FE1EAF10DF008D0650 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996FC1EAF10DF008D0650 /* Letter.swift */; };
+		BD3996FF1EAF10DF008D0650 /* LetterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3996FD1EAF10DF008D0650 /* LetterNode.swift */; };
+		BD3997011EAF10E8008D0650 /* MainMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997001EAF10E8008D0650 /* MainMotionManager.swift */; };
+		BD3997031EAF10F2008D0650 /* PauseOverlayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997021EAF10F2008D0650 /* PauseOverlayNode.swift */; };
+		BD3997051EAF1104008D0650 /* PortraitMotionResponderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997041EAF1104008D0650 /* PortraitMotionResponderComponent.swift */; };
+		BD3997091EAF1110008D0650 /* PhysicsContactUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997061EAF1110008D0650 /* PhysicsContactUtility.swift */; };
+		BD39970A1EAF1110008D0650 /* PlatformerBaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997071EAF1110008D0650 /* PlatformerBaseScene.swift */; };
+		BD39970B1EAF1110008D0650 /* PlatformerEntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997081EAF1110008D0650 /* PlatformerEntityManager.swift */; };
+		BD39970D1EAF1122008D0650 /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39970C1EAF1122008D0650 /* RenderComponent.swift */; };
+		BD3997111EAF1136008D0650 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39970E1EAF1136008D0650 /* RandomGenerator.swift */; };
+		BD3997121EAF1136008D0650 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39970F1EAF1136008D0650 /* SKNodeExtension.swift */; };
+		BD3997131EAF1136008D0650 /* SKPhysicsContactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997101EAF1136008D0650 /* SKPhysicsContactExtension.swift */; };
+		BD3997151EAF1142008D0650 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997141EAF1142008D0650 /* Player.swift */; };
+		BD3997181EAF116A008D0650 /* AgentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997161EAF116A008D0650 /* AgentComponent.swift */; };
+		BD3997191EAF116A008D0650 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3997171EAF116A008D0650 /* AnimationComponent.swift */; };
+		BD39971B1EAF15AA008D0650 /* InProgressWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971A1EAF15AA008D0650 /* InProgressWord.swift */; };
+		BD39971D1EAF15E3008D0650 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971C1EAF15E3008D0650 /* Background.swift */; };
+		BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD3996B01EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Badboy Bunny Saves the Alphabet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3996B31EAF0FA5008D0650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD3996BE1EAF0FA5008D0650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD3996C01EAF0FA5008D0650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD3996C31EAF0FA5008D0650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD3996C51EAF0FA5008D0650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD3996CC1EAF0FED008D0650 /* JumpComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
+		BD3996CD1EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeMotionResponderComponent.swift; sourceTree = "<group>"; };
+		BD3996CE1EAF0FED008D0650 /* NodeNameComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeNameComponent.swift; sourceTree = "<group>"; };
+		BD3996CF1EAF0FED008D0650 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
+		BD3996D01EAF0FED008D0650 /* OrientationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationComponent.swift; sourceTree = "<group>"; };
+		BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OscillatorComponent.swift; sourceTree = "<group>"; };
+		BD3996D81EAF1000008D0650 /* PhysicsComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsComponent.swift; sourceTree = "<group>"; };
+		BD3996DB1EAF1013008D0650 /* IslandScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = IslandScene.sks; sourceTree = "<group>"; };
+		BD3996DD1EAF1033008D0650 /* GroundComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroundComponent.swift; sourceTree = "<group>"; };
+		BD3996E11EAF104C008D0650 /* EntityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
+		BD3996E31EAF1065008D0650 /* EnemySun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemySun.swift; sourceTree = "<group>"; };
+		BD3996E51EAF106A008D0650 /* CollisionConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionConfiguration.swift; sourceTree = "<group>"; };
+		BD3996E71EAF106E008D0650 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BD3996E91EAF1074008D0650 /* ContactHandlerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactHandlerComponent.swift; sourceTree = "<group>"; };
+		BD3996EB1EAF1079008D0650 /* CoreMotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionHelper.swift; sourceTree = "<group>"; };
+		BD3996ED1EAF1082008D0650 /* CoreMotionInputComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionInputComponent.swift; sourceTree = "<group>"; };
+		BD3996EF1EAF108E008D0650 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BD3996F11EAF109B008D0650 /* Blade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
+		BD3996F41EAF10B3008D0650 /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
+		BD3996F51EAF10B3008D0650 /* BaseScene+Pause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseScene+Pause.swift"; sourceTree = "<group>"; };
+		BD3996F61EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseScene+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
+		BD3996FA1EAF10CF008D0650 /* Island.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
+		BD3996FC1EAF10DF008D0650 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		BD3996FD1EAF10DF008D0650 /* LetterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterNode.swift; sourceTree = "<group>"; };
+		BD3997001EAF10E8008D0650 /* MainMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMotionManager.swift; sourceTree = "<group>"; };
+		BD3997021EAF10F2008D0650 /* PauseOverlayNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseOverlayNode.swift; sourceTree = "<group>"; };
+		BD3997041EAF1104008D0650 /* PortraitMotionResponderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortraitMotionResponderComponent.swift; sourceTree = "<group>"; };
+		BD3997061EAF1110008D0650 /* PhysicsContactUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsContactUtility.swift; sourceTree = "<group>"; };
+		BD3997071EAF1110008D0650 /* PlatformerBaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerBaseScene.swift; sourceTree = "<group>"; };
+		BD3997081EAF1110008D0650 /* PlatformerEntityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerEntityManager.swift; sourceTree = "<group>"; };
+		BD39970C1EAF1122008D0650 /* RenderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
+		BD39970E1EAF1136008D0650 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		BD39970F1EAF1136008D0650 /* SKNodeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
+		BD3997101EAF1136008D0650 /* SKPhysicsContactExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhysicsContactExtension.swift; sourceTree = "<group>"; };
+		BD3997141EAF1142008D0650 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BD3997161EAF116A008D0650 /* AgentComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentComponent.swift; sourceTree = "<group>"; };
+		BD3997171EAF116A008D0650 /* AnimationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
+		BD39971A1EAF15AA008D0650 /* InProgressWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InProgressWord.swift; sourceTree = "<group>"; };
+		BD39971C1EAF15E3008D0650 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionResponderComponent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD3996AD1EAF0FA5008D0650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD3996A71EAF0FA5008D0650 = {
+			isa = PBXGroup;
+			children = (
+				BD3996B21EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet */,
+				BD3996B11EAF0FA5008D0650 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD3996B11EAF0FA5008D0650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD3996B01EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD3996B21EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				BD3996EF1EAF108E008D0650 /* GameViewController.swift */,
+				BD3996F31EAF10A1008D0650 /* Scene */,
+				BD3996E01EAF1044008D0650 /* Entities */,
+				BD3996DF1EAF103C008D0650 /* Gameutil */,
+				BD3996DA1EAF1009008D0650 /* SKSSceneFiles */,
+				BD3996CB1EAF0FC5008D0650 /* Components */,
+				BD3996B31EAF0FA5008D0650 /* AppDelegate.swift */,
+				BD3996BD1EAF0FA5008D0650 /* Main.storyboard */,
+				BD3996C01EAF0FA5008D0650 /* Assets.xcassets */,
+				BD3996C21EAF0FA5008D0650 /* LaunchScreen.storyboard */,
+				BD3996C51EAF0FA5008D0650 /* Info.plist */,
+			);
+			path = "Badboy Bunny Saves the Alphabet";
+			sourceTree = "<group>";
+		};
+		BD3996CB1EAF0FC5008D0650 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BD39971E1EAF1D4E008D0650 /* MotionResponderComponents */,
+				BD3997161EAF116A008D0650 /* AgentComponent.swift */,
+				BD3997171EAF116A008D0650 /* AnimationComponent.swift */,
+				BD39970C1EAF1122008D0650 /* RenderComponent.swift */,
+				BD3996ED1EAF1082008D0650 /* CoreMotionInputComponent.swift */,
+				BD3996E91EAF1074008D0650 /* ContactHandlerComponent.swift */,
+				BD3996DD1EAF1033008D0650 /* GroundComponent.swift */,
+				BD3996D81EAF1000008D0650 /* PhysicsComponent.swift */,
+				BD3996CC1EAF0FED008D0650 /* JumpComponent.swift */,
+				BD3996CE1EAF0FED008D0650 /* NodeNameComponent.swift */,
+				BD3996D01EAF0FED008D0650 /* OrientationComponent.swift */,
+				BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		BD3996DA1EAF1009008D0650 /* SKSSceneFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BD3996DB1EAF1013008D0650 /* IslandScene.sks */,
+			);
+			name = SKSSceneFiles;
+			sourceTree = "<group>";
+		};
+		BD3996DF1EAF103C008D0650 /* Gameutil */ = {
+			isa = PBXGroup;
+			children = (
+				BD39970E1EAF1136008D0650 /* RandomGenerator.swift */,
+				BD39970F1EAF1136008D0650 /* SKNodeExtension.swift */,
+				BD3997101EAF1136008D0650 /* SKPhysicsContactExtension.swift */,
+				BD3997081EAF1110008D0650 /* PlatformerEntityManager.swift */,
+				BD3997021EAF10F2008D0650 /* PauseOverlayNode.swift */,
+				BD3997001EAF10E8008D0650 /* MainMotionManager.swift */,
+				BD3996EB1EAF1079008D0650 /* CoreMotionHelper.swift */,
+				BD3996E71EAF106E008D0650 /* Constants.swift */,
+				BD3996E51EAF106A008D0650 /* CollisionConfiguration.swift */,
+				BD3996E11EAF104C008D0650 /* EntityManager.swift */,
+				BD3996CF1EAF0FED008D0650 /* NotificationNameExtension.swift */,
+			);
+			name = Gameutil;
+			sourceTree = "<group>";
+		};
+		BD3996E01EAF1044008D0650 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BD39971C1EAF15E3008D0650 /* Background.swift */,
+				BD39971A1EAF15AA008D0650 /* InProgressWord.swift */,
+				BD3997141EAF1142008D0650 /* Player.swift */,
+				BD3996FC1EAF10DF008D0650 /* Letter.swift */,
+				BD3996FD1EAF10DF008D0650 /* LetterNode.swift */,
+				BD3996FA1EAF10CF008D0650 /* Island.swift */,
+				BD3996F11EAF109B008D0650 /* Blade.swift */,
+				BD3996E31EAF1065008D0650 /* EnemySun.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		BD3996F31EAF10A1008D0650 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				BD3997061EAF1110008D0650 /* PhysicsContactUtility.swift */,
+				BD3997071EAF1110008D0650 /* PlatformerBaseScene.swift */,
+				BD3996F41EAF10B3008D0650 /* BaseScene.swift */,
+				BD3996F51EAF10B3008D0650 /* BaseScene+Pause.swift */,
+				BD3996F61EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		BD39971E1EAF1D4E008D0650 /* MotionResponderComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD3996CD1EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift */,
+				BD3997041EAF1104008D0650 /* PortraitMotionResponderComponent.swift */,
+				BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */,
+			);
+			name = MotionResponderComponents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD3996AF1EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD3996C81EAF0FA5008D0650 /* Build configuration list for PBXNativeTarget "Badboy Bunny Saves the Alphabet" */;
+			buildPhases = (
+				BD3996AC1EAF0FA5008D0650 /* Sources */,
+				BD3996AD1EAF0FA5008D0650 /* Frameworks */,
+				BD3996AE1EAF0FA5008D0650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Badboy Bunny Saves the Alphabet";
+			productName = "Badboy Bunny Saves the Alphabet";
+			productReference = BD3996B01EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD3996A81EAF0FA5008D0650 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = AlexMakedonski;
+				TargetAttributes = {
+					BD3996AF1EAF0FA5008D0650 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T9J39WJJ9G;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BD3996AB1EAF0FA5008D0650 /* Build configuration list for PBXProject "Badboy Bunny Saves the Alphabet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD3996A71EAF0FA5008D0650;
+			productRefGroup = BD3996B11EAF0FA5008D0650 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD3996AF1EAF0FA5008D0650 /* Badboy Bunny Saves the Alphabet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD3996AE1EAF0FA5008D0650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3996BF1EAF0FA5008D0650 /* Main.storyboard in Resources */,
+				BD3996C11EAF0FA5008D0650 /* Assets.xcassets in Resources */,
+				BD3996DC1EAF1013008D0650 /* IslandScene.sks in Resources */,
+				BD3996C41EAF0FA5008D0650 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD3996AC1EAF0FA5008D0650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3996DE1EAF1033008D0650 /* GroundComponent.swift in Sources */,
+				BD3997181EAF116A008D0650 /* AgentComponent.swift in Sources */,
+				BD3997031EAF10F2008D0650 /* PauseOverlayNode.swift in Sources */,
+				BD3997131EAF1136008D0650 /* SKPhysicsContactExtension.swift in Sources */,
+				BD3996FF1EAF10DF008D0650 /* LetterNode.swift in Sources */,
+				BD3996EA1EAF1074008D0650 /* ContactHandlerComponent.swift in Sources */,
+				BD3996E41EAF1065008D0650 /* EnemySun.swift in Sources */,
+				BD3996D51EAF0FED008D0650 /* NotificationNameExtension.swift in Sources */,
+				BD3996E21EAF104C008D0650 /* EntityManager.swift in Sources */,
+				BD39971B1EAF15AA008D0650 /* InProgressWord.swift in Sources */,
+				BD3996D41EAF0FED008D0650 /* NodeNameComponent.swift in Sources */,
+				BD39971D1EAF15E3008D0650 /* Background.swift in Sources */,
+				BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */,
+				BD39970B1EAF1110008D0650 /* PlatformerEntityManager.swift in Sources */,
+				BD3996F01EAF108E008D0650 /* GameViewController.swift in Sources */,
+				BD3996F71EAF10B3008D0650 /* BaseScene.swift in Sources */,
+				BD3996D31EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift in Sources */,
+				BD3996F21EAF109B008D0650 /* Blade.swift in Sources */,
+				BD3996FB1EAF10CF008D0650 /* Island.swift in Sources */,
+				BD3997191EAF116A008D0650 /* AnimationComponent.swift in Sources */,
+				BD39970D1EAF1122008D0650 /* RenderComponent.swift in Sources */,
+				BD3997091EAF1110008D0650 /* PhysicsContactUtility.swift in Sources */,
+				BD3996D61EAF0FED008D0650 /* OrientationComponent.swift in Sources */,
+				BD3997151EAF1142008D0650 /* Player.swift in Sources */,
+				BD39970A1EAF1110008D0650 /* PlatformerBaseScene.swift in Sources */,
+				BD3996E81EAF106E008D0650 /* Constants.swift in Sources */,
+				BD3996D21EAF0FED008D0650 /* JumpComponent.swift in Sources */,
+				BD3996D91EAF1000008D0650 /* PhysicsComponent.swift in Sources */,
+				BD3997121EAF1136008D0650 /* SKNodeExtension.swift in Sources */,
+				BD3996F81EAF10B3008D0650 /* BaseScene+Pause.swift in Sources */,
+				BD3996EE1EAF1082008D0650 /* CoreMotionInputComponent.swift in Sources */,
+				BD3996B41EAF0FA5008D0650 /* AppDelegate.swift in Sources */,
+				BD3997111EAF1136008D0650 /* RandomGenerator.swift in Sources */,
+				BD3996EC1EAF1079008D0650 /* CoreMotionHelper.swift in Sources */,
+				BD3996D71EAF0FED008D0650 /* OscillatorComponent.swift in Sources */,
+				BD3997011EAF10E8008D0650 /* MainMotionManager.swift in Sources */,
+				BD3996E61EAF106A008D0650 /* CollisionConfiguration.swift in Sources */,
+				BD3996FE1EAF10DF008D0650 /* Letter.swift in Sources */,
+				BD3996F91EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift in Sources */,
+				BD3997051EAF1104008D0650 /* PortraitMotionResponderComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD3996BD1EAF0FA5008D0650 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD3996BE1EAF0FA5008D0650 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD3996C21EAF0FA5008D0650 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD3996C31EAF0FA5008D0650 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD3996C61EAF0FA5008D0650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD3996C71EAF0FA5008D0650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD3996C91EAF0FA5008D0650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = "Badboy Bunny Saves the Alphabet/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexMakedonski.Badboy-Bunny-Saves-the-Alphabet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BD3996CA1EAF0FA5008D0650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = "Badboy Bunny Saves the Alphabet/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlexMakedonski.Badboy-Bunny-Saves-the-Alphabet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD3996AB1EAF0FA5008D0650 /* Build configuration list for PBXProject "Badboy Bunny Saves the Alphabet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3996C61EAF0FA5008D0650 /* Debug */,
+				BD3996C71EAF0FA5008D0650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD3996C81EAF0FA5008D0650 /* Build configuration list for PBXNativeTarget "Badboy Bunny Saves the Alphabet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3996C91EAF0FA5008D0650 /* Debug */,
+				BD3996CA1EAF0FA5008D0650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD3996A81EAF0FA5008D0650 /* Project object */;
+}
