@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1A5D3D064A10046D34FE95F40D9EE9649251BE30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "96F8D23D9193CF02B422369F1DFEFEF30843F9D9" : 9223372036854775807,
+    "1A5D3D064A10046D34FE95F40D9EE9649251BE30" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FE4410F3-0A4E-462C-A6C1-87592384D97F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "96F8D23D9193CF02B422369F1DFEFEF30843F9D9" : "",
+    "1A5D3D064A10046D34FE95F40D9EE9649251BE30" : "BadBoyBunny\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Badboy Bunny Saves the Alphabet",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Badboy Bunny Saves the Alphabet.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alemak1\/BadBoyBunny.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A5D3D064A10046D34FE95F40D9EE9649251BE30"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alemak1\/BadBoyBunny2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96F8D23D9193CF02B422369F1DFEFEF30843F9D9"
+    }
+  ]
+}
