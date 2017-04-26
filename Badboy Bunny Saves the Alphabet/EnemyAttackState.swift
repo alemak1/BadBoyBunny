@@ -27,19 +27,23 @@ class EnemyAttackState: GKState{
         
         
         //If the target node is set to nil (because of a notification sent to the TargetNode component, then the statemachine returns the enemy back to the inactive state
-        
-        if targetNode == nil{
-            stateMachine?.enter(EnemyActiveState.self)
+    
+        if let targetNodeComponent = enemyEntity.component(ofType: TargetNodeComponent.self){
+            
+            if targetNodeComponent.playerHasLeftProximity{
+                stateMachine?.enter(EnemyActiveState)
+            } else if let node = enemyEntity.component(ofType: RenderComponent.self)?.node {
+                node.lerpToPoint(targetPoint: targetNodeComponent.targetNode.position, withLerpFactor: 0.20)
+                
+            }
 
         }
-        
-        
         
     }
     
     override func didEnter(from previousState: GKState?) {
         super.didEnter(from: previousState)
-        setTargetNode()
+        print("Enemy has entered the attack state, setting target node...")
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -54,17 +58,6 @@ class EnemyAttackState: GKState{
     }
     
     
-    
-    private func setTargetNode(){
-
-        let targetNode = enemyEntity.component(ofType: TargetNodeComponent.self)?.targetNode
-        
-        if targetNode == nil {
-            print("Alien failed to set target node while in atack state")
-            stateMachine?.enter(EnemyActiveState.self)
-        }
-        
-    }
     
     
     

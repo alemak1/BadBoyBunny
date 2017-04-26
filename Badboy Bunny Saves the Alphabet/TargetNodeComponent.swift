@@ -10,16 +10,25 @@ import Foundation
 import GameplayKit
 import SpriteKit
 
+/** The target node tests for whether or not the player or other target has entered its proximity, as defined by a minimum proximity distance
+ 
+ 
+ **/
+
 class TargetNodeComponent: GKComponent{
     
     
-    var targetNode: SKSpriteNode?
+    var targetNode: SKSpriteNode
     var renderNode: SKSpriteNode?
+    var proximityDistance: Double
+    var playerHasEnteredProximity: Bool = false
+    var playerHasLeftProximity: Bool = true
     
-    override init(){
+    init(targetNode: SKSpriteNode, proximityDistance: Double){
+        self.targetNode = targetNode
+        self.proximityDistance = proximityDistance
         super.init()
         
-        registerForNotifications()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,33 +41,33 @@ class TargetNodeComponent: GKComponent{
     
     override func willRemoveFromEntity() {
         renderNode = nil
-        targetNode = nil
     }
     
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
-        if targetNode != nil, renderNode != nil{
+        
+        guard let renderNode = self.renderNode else {
+            print("The enemy must have a render node in order to test for player proximity")
+            return }
+        
+        
+        if  playerHasLeftProximity && renderNode.position.getDistanceToPoint(otherPoint: targetNode.position) < proximityDistance{
+            print("Checking if enemy has enetered the proximity zone...")
             
-            renderNode!.lerpToPoint(targetPoint: targetNode!.position, withLerpFactor: 0.10)
+            self.playerHasEnteredProximity = true
+            playerHasLeftProximity = false
         }
-    }
-    
-    /** If the target has been intercepted and hit by the attacking enemy, then the target is set to nil
- 
-    **/
-    func targetHit(notification: Notification){
         
-        let userInfo = notification.userInfo
-        
-        if let enemyName = userInfo?["enemyName"] as? String, enemyName == renderNode?.name{
-            targetNode = nil
+        if playerHasEnteredProximity && renderNode.position.getDistanceToPoint(otherPoint: targetNode.position) > proximityDistance{
+            
+            print("Checking if enemy has left the proximity zone...")
+            playerHasEnteredProximity = false
+            playerHasLeftProximity = true
         }
         
     }
     
-    func registerForNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(TargetNodeComponent.targetHit(notification:)), name: Notification.Name.EnemyDidHitPlayerNotification, object: nil)
-
-    }
+  
+   
 }

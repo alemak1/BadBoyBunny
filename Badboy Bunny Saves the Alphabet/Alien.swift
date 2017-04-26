@@ -18,7 +18,7 @@ class Alien: Enemy{
     
     let notificationObserverQueue = OperationQueue()
     
-    convenience init(alienColor: AlienColor, position: CGPoint, nodeName: String, targetAgent: GKAgent2D?) {
+    convenience init(alienColor: AlienColor, position: CGPoint, nodeName: String, targetNode: SKSpriteNode, minimumProximityDistance: Double) {
         self.init()
         
         var texture: SKTexture?
@@ -57,13 +57,16 @@ class Alien: Enemy{
         let animationComponent = AnimationComponent(animations: Alien.AnimationsDict)
         addComponent(animationComponent)
         
-        if let targetAgent = targetAgent{
-            let agentComponent = AgentComponent(targetAgent: targetAgent, maxPredictionTime: 10.00, maxSpeed: 1.00, maxAcceleration: 1.00, lerpingEnabled: true)
-            addComponent(agentComponent)
-        }
         
-        let targetNode = TargetNodeComponent()
-        addComponent(targetNode)
+        let targetNodeComponent = TargetNodeComponent(targetNode: targetNode, proximityDistance: minimumProximityDistance)
+        addComponent(targetNodeComponent)
+        
+        let intelligenceComponent = IntelligenceComponent(states: [
+            EnemyInactiveState(enemyEntity: self),
+            EnemyAttackState(enemyEntity: self),
+            EnemyActiveState(enemyEntity: self)
+            ])
+        addComponent(intelligenceComponent)
         
     }
     

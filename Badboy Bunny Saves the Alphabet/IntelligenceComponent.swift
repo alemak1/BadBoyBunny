@@ -20,7 +20,7 @@ class IntelligenceComponent: GKComponent{
         stateMachine = GKStateMachine(states: states)
         super.init()
         
-        registerHandlerForPlayerProximityNotifications()
+        stateMachine?.enter(EnemyActiveState)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,41 +29,11 @@ class IntelligenceComponent: GKComponent{
     
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
+        stateMachine?.update(deltaTime: seconds)
     }
     
     
-    func registerHandlerForPlayerProximityNotifications(){
-        
-        NotificationCenter.default.addObserver(forName: Notification.Name.PlayerEnteredEnemyProximityNotification, object: nil, queue: notificationObserverQueue, using: {
-            
-            notification in
-            
-            if let userInfo = notification.userInfo, let senderName = userInfo["enemyNodeName"] as? String, let receiverName = self.entity?.component(ofType: NodeNameComponent.self)?.nodeName {
-                
-                guard receiverName == senderName else { return }
-                
-                self.stateMachine?.enter(EnemyAttackState.self)
-                
-            }
-            
-        })
-        
-        
-        NotificationCenter.default.addObserver(forName: Notification.Name.PlayerExitedEnemyProximityNotification, object: nil, queue: notificationObserverQueue, using: {
-        
-            notification in
-            
-            if let userInfo = notification.userInfo, let senderName = userInfo["enemyNodeName"] as? String, let receiverName = self.entity?.component(ofType: NodeNameComponent.self)?.nodeName {
-                
-                guard receiverName == senderName else { return }
-                
-                self.stateMachine?.enter(EnemyActiveState.self)
-                
-            }
-            
-        })
-        
-    }
     
+
     
 }

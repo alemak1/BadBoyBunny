@@ -110,7 +110,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         
         var newEntities = [GKEntity]()
         
-        let islandSceneRootNode = SKScene(fileNamed: "LavaScene")?.childNode(withName: "RootNode")
+        let islandSceneRootNode = SKScene(fileNamed: "IslandScene")?.childNode(withName: "RootNode")
         
         
         saveSpriteInformation(rootNode: islandSceneRootNode!)
@@ -148,9 +148,10 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
                     
                     let player = entityManager.getPlayerEntities().first!
                     
-                    guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else { break }
+                    guard let playerNode = player.component(ofType: RenderComponent.self)?.node else { break }
                     
-                    let alienEntity = Alien(alienColor: .Pink, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: nil)
+                
+                    let alienEntity = Alien(alienColor: .Pink, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 300.00)
                     entityManager.addToWorld(alienEntity)
                 }
                 
@@ -330,12 +331,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
             case CollisionConfiguration.Enemy.categoryMask:
                 print("Sending player damage notification...")
                 NotificationCenter.default.post(name: Notification.Name.PlayerDidTakeDamageNotification, object: nil, userInfo: nil)
-                if otherBody.node?.entity is Alien, let alienName = otherBody.node?.name{
-                    
-                    let userInfo = ["enemyName":alienName]
-
-                    NotificationCenter.default.post(name: Notification.Name.EnemyDidHitPlayerNotification, object: nil, userInfo: userInfo)
-                }
+              
                 
                 break
             default:
