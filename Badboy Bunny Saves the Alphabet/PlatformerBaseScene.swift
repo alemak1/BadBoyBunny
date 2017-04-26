@@ -151,7 +151,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
                     guard let playerNode = player.component(ofType: RenderComponent.self)?.node else { break }
                     
                 
-                    let alienEntity = Alien(alienColor: .Pink, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 300.00)
+                    let alienEntity = Alien(alienColor: .Pink, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
                     entityManager.addToWorld(alienEntity)
                 }
                 

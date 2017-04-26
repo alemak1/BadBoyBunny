@@ -33,7 +33,7 @@ class EnemyAttackState: GKState{
             if targetNodeComponent.playerHasLeftProximity{
                 stateMachine?.enter(EnemyActiveState)
             } else if let node = enemyEntity.component(ofType: RenderComponent.self)?.node {
-                node.lerpToPoint(targetPoint: targetNodeComponent.targetNode.position, withLerpFactor: 0.20)
+                node.lerpToPoint(targetPoint: targetNodeComponent.targetNode.position, withLerpFactor: 0.05)
                 
             }
 
