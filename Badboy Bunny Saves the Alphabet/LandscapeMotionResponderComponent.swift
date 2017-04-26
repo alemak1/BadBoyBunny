@@ -32,7 +32,7 @@ class LandscapeMotionResponderComponent: MotionResponderComponent{
             }
             **/
            // print(horizontalAttitude)
-            appliedForceDeltaY = CGFloat(horizontalAttitude*500)
+            appliedForceDeltaY = CGFloat(horizontalAttitude*adjustmentCoefficientY)
            // print("The appliedForceDeltaY is \(appliedForceDeltaY)")
         }
     }
@@ -51,7 +51,7 @@ class LandscapeMotionResponderComponent: MotionResponderComponent{
             **/
             
            // print(verticalAttitude)
-            appliedForceDeltaX = CGFloat(verticalAttitude*500)
+            appliedForceDeltaX = CGFloat(verticalAttitude*adjustmentCoefficientX)
            // print("The appliedForceDeltaX is \(appliedForceDeltaX)")
             
         }

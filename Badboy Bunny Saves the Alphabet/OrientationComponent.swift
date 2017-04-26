@@ -12,7 +12,7 @@ import SpriteKit
 
 
 enum Orientation: String{
-    case Left, Right
+    case Left, Right, None
 }
 
 

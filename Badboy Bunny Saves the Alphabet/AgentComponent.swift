@@ -101,10 +101,10 @@ class AgentComponent: GKComponent, GKAgentDelegate{
         
         if !hasReachedGoal{
             
-            print("Trying to attack target again...")
+           // print("Trying to attack target again...")
             let adjustmentFunction: (Void) -> (Void) = lerpingEnabled ?
                 {
-                    print("Lerping to target position...")
+                   // print("Lerping to target position...")
                     renderNode.lerpToPoint(agentPosition: agent.position, withLerpFactor: 0.1)
                    
                     /** This causes an uncaught exception for some reason:
@@ -112,7 +112,7 @@ class AgentComponent: GKComponent, GKAgentDelegate{
                      renderNode.physicsBody?.lerpToVelocity(agentVelocity: agent.velocity, withLerpFactor: 0.10) **/}
                 :
                 {
-                    print("Lerping to target position...")
+                   // print("Lerping to target position...")
                     renderNode.position = agent.position.getCGPoint()
                    /** renderNode.physicsBody?.velocity = agent.velocity.getCGVector() **/ }
         
@@ -212,15 +212,15 @@ class AgentComponent: GKComponent, GKAgentDelegate{
         if(isAgentDriven){
         
         if !hasReachedGoal{
-            print("Updating agent...")
+         //   print("Updating agent...")
             entityAgent.update(deltaTime: seconds)
         } else {
-            print("Running time until next agent-initiated behavior starts...")
+          //  print("Running time until next agent-initiated behavior starts...")
             frameCount += seconds
             
             if frameCount > restInterval{
                 hasReachedGoal = false
-                print("hasReached goal reset to false")
+              //  print("hasReached goal reset to false")
                 
     
                 frameCount = 0
@@ -257,6 +257,14 @@ extension SKSpriteNode{
         self.position.x += lerpXPos
         self.position.y += lerpYPos
         
+    }
+    
+    func lerpToPoint(targetPoint: CGPoint, withLerpFactor lerpFactor: CGFloat){
+        let xLerp = (targetPoint.x - self.position.x)*lerpFactor
+        let yLerp = (targetPoint.x - self.position.y)*lerpFactor
+        
+        self.position.x += xLerp
+        self.position.y += yLerp 
     }
 }
 

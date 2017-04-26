@@ -14,20 +14,14 @@ import SpriteKit
 class JumpComponent: GKComponent{
     
     var canJump: Bool = true
+    var jumpAdjustmentCoefficient: Double = 1.00
+    
     var jumpToggleQueue = DispatchQueue(label: "jumpToggleQueue")
     
     override init() {
         super.init()
         
-        let nc = NotificationCenter.default
-        
-        nc.addObserver(self, selector: #selector(JumpComponent.toggleJumpingOn), name: Notification.Name.PlayerStartedBarrierContactNotification, object: nil)
-        
-        nc.addObserver(self, selector: #selector(JumpComponent.toggleJumpingOff), name: Notification.Name.PlayerStoppedBarrierContactNotification, object: nil)
-        
-        nc.addObserver(self, selector: #selector(JumpComponent.applyJumpImpulse), name: Notification.Name.DidTouchPlayerNodeNotification, object: nil)
-        
-        
+        registerForNotifications()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,7 +47,7 @@ class JumpComponent: GKComponent{
         
         
         if physicsBody.velocity.dy == 0{
-            let impulseVector = CGVector(dx: 0.00, dy: 500.00)
+            let impulseVector = CGVector(dx: 0.00, dy: 500.00*jumpAdjustmentCoefficient)
             physicsBody.applyImpulse(impulseVector)
 
         }
@@ -90,6 +84,34 @@ class JumpComponent: GKComponent{
         
         
     }
+    
+    
+    func registerForNotifications(){
+        
+        let nc = NotificationCenter.default
+        
+        nc.addObserver(self, selector: #selector(JumpComponent.toggleJumpingOn), name: Notification.Name.PlayerStartedBarrierContactNotification, object: nil)
+        
+        nc.addObserver(self, selector: #selector(JumpComponent.toggleJumpingOff), name: Notification.Name.PlayerStoppedBarrierContactNotification, object: nil)
+        
+        nc.addObserver(self, selector: #selector(JumpComponent.applyJumpImpulse), name: Notification.Name.DidTouchPlayerNodeNotification, object: nil)
+        
+        
+        nc.addObserver(self, selector: #selector(JumpComponent.resetAdjustmentCoefficientForSpringEffect(notification:)), name: Notification.Name.PlayerStartedContactWithSpring, object: nil)
+        
+        nc.addObserver(self, selector: #selector(JumpComponent.resetAdjustmentCoefficientToDefault(notification:)), name: Notification.Name.PlayerEndedContactWithSpring, object: nil)
+    }
+    
+    
+    func resetAdjustmentCoefficientForSpringEffect(notification: Notification){
+        jumpAdjustmentCoefficient = 2.0
+    }
+    
+    func resetAdjustmentCoefficientToDefault(notification: Notification){
+        jumpAdjustmentCoefficient = 1.0
+        
+    }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self)

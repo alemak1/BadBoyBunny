@@ -22,6 +22,8 @@ class PlatformerEntityManager{
         
         let renderComponent = GKComponentSystem(componentClass: RenderComponent.self)
         
+        let invisibilityComponent = GKComponentSystem(componentClass: InvisibilityComponent.self)
+        
         let nodeNameComponent = GKComponentSystem(componentClass: NodeNameComponent.self)
         
         let physicsComponent = GKComponentSystem(componentClass: PhysicsComponent.self)
@@ -39,7 +41,9 @@ class PlatformerEntityManager{
         
         let healthComponent = GKComponentSystem(componentClass: HealthComponent.self)
         
-        return [renderComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent]
+        let intelligenceComponent = GKComponentSystem(componentClass: IntelligenceComponent.self)
+        
+        return [renderComponent,invisibilityComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent, intelligenceComponent]
     
     }()
     
@@ -61,6 +65,8 @@ class PlatformerEntityManager{
                 componentSystem.removeComponent(foundIn: currentRemove)
             }
         }
+        
+        
         
         
         toRemove.removeAll()
@@ -123,4 +129,56 @@ class PlatformerEntityManager{
     }
     
     
+}
+
+extension PlatformerEntityManager{
+    /**  For LevelA (Alien Scene), subclass the PlatformerEntityManager and override the update function by calling the prxoimity test function, which posts a notification each time the player enters a proximity zone around the alien, which triggers the alien transition to attack mode. The alien whose proximity space has been trespassed will be identified by its node name, which is stored in the notificaiton userInfo dict
+ 
+    **/
+    func testForPlayerHasEnteredEnemyProximity(minimumProximityDistance: Double){
+        
+        for entity in entities{
+            if entity is Enemy, let renderNode = entity.component(ofType: RenderComponent.self)?.node, let nodeName = renderNode.name,  let enemyState = entity.component(ofType: IntelligenceComponent.self)?.stateMachine?.currentState{
+                
+               
+                switch(enemyState){
+                    case is EnemyAttackState:
+                        if !playerIsInsideEnemyProximitySpace(enemyPosition: renderNode.position, minimumProximityDistance: minimumProximityDistance){
+                            
+                            let userInfo = ["enemyNodeName": nodeName]
+                            
+                            NotificationCenter.default.post(name: Notification.Name.PlayerExitedEnemyProximityNotification, object: nil, userInfo: userInfo)
+                        }
+                        break
+                    case is EnemyActiveState:
+                        if playerIsInsideEnemyProximitySpace(enemyPosition: renderNode.position, minimumProximityDistance: minimumProximityDistance){
+                            
+                            let userInfo = ["enemyNodeName": nodeName]
+                            
+                            NotificationCenter.default.post(name: Notification.Name.PlayerEnteredEnemyProximityNotification, object: nil, userInfo: userInfo)
+                        }
+                        break
+                    default:
+                        break
+                }
+                
+                
+   
+            }
+        }
+
+    }
+    
+    
+    func playerIsInsideEnemyProximitySpace(enemyPosition: CGPoint, minimumProximityDistance: Double) -> Bool{
+        
+        guard let playerEntity = getPlayerEntities().first, let playerNode = playerEntity.component(ofType: RenderComponent.self)?.node else { return false }
+        
+        if playerNode.position.getDistanceToPoint(otherPoint: enemyPosition) < minimumProximityDistance{
+            
+            return true
+        }
+        
+        return false
+    }
 }

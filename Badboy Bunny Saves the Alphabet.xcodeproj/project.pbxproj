@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD24EDF91EB081C400B3C3FC /* LevelAEntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24EDF81EB081C400B3C3FC /* LevelAEntityManager.swift */; };
+		BD24EDFB1EB0828600B3C3FC /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD24EDFA1EB0828600B3C3FC /* Enemy.swift */; };
+		BD24EDFD1EB086FD00B3C3FC /* LevelIScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD24EDFC1EB086FD00B3C3FC /* LevelIScene.sks */; };
+		BD24EDFF1EB08BFF00B3C3FC /* SnowEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD24EDFE1EB08BFF00B3C3FC /* SnowEmitter.sks */; };
+		BD24EE011EB0929200B3C3FC /* Lava.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD24EE001EB0929200B3C3FC /* Lava.sks */; };
+		BD24EE031EB092D000B3C3FC /* LavaScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD24EE021EB092D000B3C3FC /* LavaScene.sks */; };
+		BD289ACB1EAF98C800F8EDA9 /* BladeIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD289ACA1EAF98C800F8EDA9 /* BladeIsland.swift */; };
 		BD2ED78E1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED78D1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift */; };
 		BD2ED7901EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED78F1EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift */; };
 		BD2ED7921EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2ED7911EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift */; };
@@ -58,9 +65,23 @@
 		BD3997201EAF1D61008D0650 /* MotionResponderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */; };
 		BD3D27FF1EAF56BD00697F26 /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D27FE1EAF56BD00697F26 /* Alien.swift */; };
 		BD3D28011EAF5B0D00697F26 /* LaserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */; };
+		BD72A6241EB0485700C3F9F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A6231EB0485700C3F9F6 /* MenuViewController.swift */; };
+		BD72A6261EB04C8000C3F9F6 /* InvisibilityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A6251EB04C8000C3F9F6 /* InvisibilityComponent.swift */; };
+		BD72A6281EB0518C00C3F9F6 /* IntelligenceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A6271EB0518C00C3F9F6 /* IntelligenceComponent.swift */; };
+		BD72A62B1EB0522800C3F9F6 /* EnemyInactiveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A62A1EB0522800C3F9F6 /* EnemyInactiveState.swift */; };
+		BD72A62D1EB0523300C3F9F6 /* EnemyAciveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A62C1EB0523300C3F9F6 /* EnemyAciveState.swift */; };
+		BD72A62F1EB0524500C3F9F6 /* EnemyAttackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A62E1EB0524500C3F9F6 /* EnemyAttackState.swift */; };
+		BD72A6311EB05C0000C3F9F6 /* TargetNodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72A6301EB05C0000C3F9F6 /* TargetNodeComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD24EDF81EB081C400B3C3FC /* LevelAEntityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAEntityManager.swift; sourceTree = "<group>"; };
+		BD24EDFA1EB0828600B3C3FC /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		BD24EDFC1EB086FD00B3C3FC /* LevelIScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelIScene.sks; sourceTree = "<group>"; };
+		BD24EDFE1EB08BFF00B3C3FC /* SnowEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEmitter.sks; sourceTree = "<group>"; };
+		BD24EE001EB0929200B3C3FC /* Lava.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Lava.sks; sourceTree = "<group>"; };
+		BD24EE021EB092D000B3C3FC /* LavaScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LavaScene.sks; sourceTree = "<group>"; };
+		BD289ACA1EAF98C800F8EDA9 /* BladeIsland.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BladeIsland.swift; sourceTree = "<group>"; };
 		BD2ED78D1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneActive.swift; sourceTree = "<group>"; };
 		BD2ED78F1EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneFailState.swift; sourceTree = "<group>"; };
 		BD2ED7911EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformerLevelSceneSuccessState.swift; sourceTree = "<group>"; };
@@ -114,6 +135,13 @@
 		BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionResponderComponent.swift; sourceTree = "<group>"; };
 		BD3D27FE1EAF56BD00697F26 /* Alien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alien.swift; sourceTree = "<group>"; };
 		BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaserComponent.swift; sourceTree = "<group>"; };
+		BD72A6231EB0485700C3F9F6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BD72A6251EB04C8000C3F9F6 /* InvisibilityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvisibilityComponent.swift; sourceTree = "<group>"; };
+		BD72A6271EB0518C00C3F9F6 /* IntelligenceComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntelligenceComponent.swift; sourceTree = "<group>"; };
+		BD72A62A1EB0522800C3F9F6 /* EnemyInactiveState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyInactiveState.swift; sourceTree = "<group>"; };
+		BD72A62C1EB0523300C3F9F6 /* EnemyAciveState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyAciveState.swift; sourceTree = "<group>"; };
+		BD72A62E1EB0524500C3F9F6 /* EnemyAttackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyAttackState.swift; sourceTree = "<group>"; };
+		BD72A6301EB05C0000C3F9F6 /* TargetNodeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetNodeComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +155,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD24EDF71EB0813600B3C3FC /* EntityManagers */ = {
+			isa = PBXGroup;
+			children = (
+				BD3996E11EAF104C008D0650 /* EntityManager.swift */,
+				BD3997081EAF1110008D0650 /* PlatformerEntityManager.swift */,
+				BD24EDF81EB081C400B3C3FC /* LevelAEntityManager.swift */,
+			);
+			name = EntityManagers;
+			sourceTree = "<group>";
+		};
 		BD2ED78C1EAF2F9C001E8A48 /* SceneStates */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +206,7 @@
 				BD3996C01EAF0FA5008D0650 /* Assets.xcassets */,
 				BD3996C21EAF0FA5008D0650 /* LaunchScreen.storyboard */,
 				BD3996C51EAF0FA5008D0650 /* Info.plist */,
+				BD72A6231EB0485700C3F9F6 /* MenuViewController.swift */,
 			);
 			path = "Badboy Bunny Saves the Alphabet";
 			sourceTree = "<group>";
@@ -189,6 +228,9 @@
 				BD3996D11EAF0FED008D0650 /* OscillatorComponent.swift */,
 				BD2ED7951EAF3304001E8A48 /* HealthComponent.swift */,
 				BD3D28001EAF5B0D00697F26 /* LaserComponent.swift */,
+				BD72A6251EB04C8000C3F9F6 /* InvisibilityComponent.swift */,
+				BD72A6271EB0518C00C3F9F6 /* IntelligenceComponent.swift */,
+				BD72A6301EB05C0000C3F9F6 /* TargetNodeComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -197,6 +239,10 @@
 			isa = PBXGroup;
 			children = (
 				BD3996DB1EAF1013008D0650 /* IslandScene.sks */,
+				BD24EDFC1EB086FD00B3C3FC /* LevelIScene.sks */,
+				BD24EDFE1EB08BFF00B3C3FC /* SnowEmitter.sks */,
+				BD24EE001EB0929200B3C3FC /* Lava.sks */,
+				BD24EE021EB092D000B3C3FC /* LavaScene.sks */,
 			);
 			name = SKSSceneFiles;
 			sourceTree = "<group>";
@@ -207,13 +253,11 @@
 				BD39970E1EAF1136008D0650 /* RandomGenerator.swift */,
 				BD39970F1EAF1136008D0650 /* SKNodeExtension.swift */,
 				BD3997101EAF1136008D0650 /* SKPhysicsContactExtension.swift */,
-				BD3997081EAF1110008D0650 /* PlatformerEntityManager.swift */,
 				BD3997021EAF10F2008D0650 /* PauseOverlayNode.swift */,
 				BD3997001EAF10E8008D0650 /* MainMotionManager.swift */,
 				BD3996EB1EAF1079008D0650 /* CoreMotionHelper.swift */,
 				BD3996E71EAF106E008D0650 /* Constants.swift */,
 				BD3996E51EAF106A008D0650 /* CollisionConfiguration.swift */,
-				BD3996E11EAF104C008D0650 /* EntityManager.swift */,
 				BD3996CF1EAF0FED008D0650 /* NotificationNameExtension.swift */,
 			);
 			name = Gameutil;
@@ -222,6 +266,7 @@
 		BD3996E01EAF1044008D0650 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BD72A6291EB0521A00C3F9F6 /* EnemyStates */,
 				BD39971C1EAF15E3008D0650 /* Background.swift */,
 				BD39971A1EAF15AA008D0650 /* InProgressWord.swift */,
 				BD3997141EAF1142008D0650 /* Player.swift */,
@@ -231,6 +276,8 @@
 				BD3996F11EAF109B008D0650 /* Blade.swift */,
 				BD3996E31EAF1065008D0650 /* EnemySun.swift */,
 				BD3D27FE1EAF56BD00697F26 /* Alien.swift */,
+				BD289ACA1EAF98C800F8EDA9 /* BladeIsland.swift */,
+				BD24EDFA1EB0828600B3C3FC /* Enemy.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -238,6 +285,7 @@
 		BD3996F31EAF10A1008D0650 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BD24EDF71EB0813600B3C3FC /* EntityManagers */,
 				BD2ED78C1EAF2F9C001E8A48 /* SceneStates */,
 				BD3997061EAF1110008D0650 /* PhysicsContactUtility.swift */,
 				BD3997071EAF1110008D0650 /* PlatformerBaseScene.swift */,
@@ -256,6 +304,16 @@
 				BD39971F1EAF1D61008D0650 /* MotionResponderComponent.swift */,
 			);
 			name = MotionResponderComponents;
+			sourceTree = "<group>";
+		};
+		BD72A6291EB0521A00C3F9F6 /* EnemyStates */ = {
+			isa = PBXGroup;
+			children = (
+				BD72A62A1EB0522800C3F9F6 /* EnemyInactiveState.swift */,
+				BD72A62C1EB0523300C3F9F6 /* EnemyAciveState.swift */,
+				BD72A62E1EB0524500C3F9F6 /* EnemyAttackState.swift */,
+			);
+			name = EnemyStates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,9 +377,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3996BF1EAF0FA5008D0650 /* Main.storyboard in Resources */,
+				BD24EDFD1EB086FD00B3C3FC /* LevelIScene.sks in Resources */,
 				BD3996C11EAF0FA5008D0650 /* Assets.xcassets in Resources */,
+				BD24EE011EB0929200B3C3FC /* Lava.sks in Resources */,
 				BD3996DC1EAF1013008D0650 /* IslandScene.sks in Resources */,
 				BD3996C41EAF0FA5008D0650 /* LaunchScreen.storyboard in Resources */,
+				BD24EE031EB092D000B3C3FC /* LavaScene.sks in Resources */,
+				BD24EDFF1EB08BFF00B3C3FC /* SnowEmitter.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,9 +394,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD72A62B1EB0522800C3F9F6 /* EnemyInactiveState.swift in Sources */,
 				BD3996DE1EAF1033008D0650 /* GroundComponent.swift in Sources */,
 				BD3997181EAF116A008D0650 /* AgentComponent.swift in Sources */,
 				BD3997031EAF10F2008D0650 /* PauseOverlayNode.swift in Sources */,
+				BD72A6241EB0485700C3F9F6 /* MenuViewController.swift in Sources */,
+				BD72A62D1EB0523300C3F9F6 /* EnemyAciveState.swift in Sources */,
 				BD3997131EAF1136008D0650 /* SKPhysicsContactExtension.swift in Sources */,
 				BD3996FF1EAF10DF008D0650 /* LetterNode.swift in Sources */,
 				BD3996EA1EAF1074008D0650 /* ContactHandlerComponent.swift in Sources */,
@@ -348,21 +413,26 @@
 				BD39970B1EAF1110008D0650 /* PlatformerEntityManager.swift in Sources */,
 				BD2ED78E1EAF2FB2001E8A48 /* PlatformerLevelSceneActive.swift in Sources */,
 				BD3D28011EAF5B0D00697F26 /* LaserComponent.swift in Sources */,
+				BD72A62F1EB0524500C3F9F6 /* EnemyAttackState.swift in Sources */,
 				BD3996F01EAF108E008D0650 /* GameViewController.swift in Sources */,
 				BD3996F71EAF10B3008D0650 /* BaseScene.swift in Sources */,
 				BD3996D31EAF0FED008D0650 /* LandscapeMotionResponderComponent.swift in Sources */,
 				BD3996F21EAF109B008D0650 /* Blade.swift in Sources */,
 				BD2ED7901EAF2FD3001E8A48 /* PlatformerLevelSceneFailState.swift in Sources */,
+				BD72A6311EB05C0000C3F9F6 /* TargetNodeComponent.swift in Sources */,
 				BD3996FB1EAF10CF008D0650 /* Island.swift in Sources */,
 				BD3997191EAF116A008D0650 /* AnimationComponent.swift in Sources */,
 				BD39970D1EAF1122008D0650 /* RenderComponent.swift in Sources */,
+				BD24EDF91EB081C400B3C3FC /* LevelAEntityManager.swift in Sources */,
 				BD3997091EAF1110008D0650 /* PhysicsContactUtility.swift in Sources */,
 				BD2ED7921EAF2FF3001E8A48 /* PlatformerLevelSceneSuccessState.swift in Sources */,
 				BD3996D61EAF0FED008D0650 /* OrientationComponent.swift in Sources */,
+				BD72A6261EB04C8000C3F9F6 /* InvisibilityComponent.swift in Sources */,
 				BD3997151EAF1142008D0650 /* Player.swift in Sources */,
 				BD3D27FF1EAF56BD00697F26 /* Alien.swift in Sources */,
 				BD39970A1EAF1110008D0650 /* PlatformerBaseScene.swift in Sources */,
 				BD3996E81EAF106E008D0650 /* Constants.swift in Sources */,
+				BD289ACB1EAF98C800F8EDA9 /* BladeIsland.swift in Sources */,
 				BD3996D21EAF0FED008D0650 /* JumpComponent.swift in Sources */,
 				BD3996D91EAF1000008D0650 /* PhysicsComponent.swift in Sources */,
 				BD3997121EAF1136008D0650 /* SKNodeExtension.swift in Sources */,
@@ -371,6 +441,7 @@
 				BD3996EE1EAF1082008D0650 /* CoreMotionInputComponent.swift in Sources */,
 				BD3996B41EAF0FA5008D0650 /* AppDelegate.swift in Sources */,
 				BD3997111EAF1136008D0650 /* RandomGenerator.swift in Sources */,
+				BD24EDFB1EB0828600B3C3FC /* Enemy.swift in Sources */,
 				BD3996EC1EAF1079008D0650 /* CoreMotionHelper.swift in Sources */,
 				BD2ED7961EAF3304001E8A48 /* HealthComponent.swift in Sources */,
 				BD3996D71EAF0FED008D0650 /* OscillatorComponent.swift in Sources */,
@@ -378,6 +449,7 @@
 				BD3996E61EAF106A008D0650 /* CollisionConfiguration.swift in Sources */,
 				BD3996FE1EAF10DF008D0650 /* Letter.swift in Sources */,
 				BD3996F91EAF10B3008D0650 /* BaseScene+SKPhysicsContactDelegate.swift in Sources */,
+				BD72A6281EB0518C00C3F9F6 /* IntelligenceComponent.swift in Sources */,
 				BD3997051EAF1104008D0650 /* PortraitMotionResponderComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

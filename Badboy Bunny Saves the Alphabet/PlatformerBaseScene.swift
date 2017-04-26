@@ -110,7 +110,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         
         var newEntities = [GKEntity]()
         
-        let islandSceneRootNode = SKScene(fileNamed: "IslandScene")?.childNode(withName: "RootNode")
+        let islandSceneRootNode = SKScene(fileNamed: "LavaScene")?.childNode(withName: "RootNode")
         
         
         saveSpriteInformation(rootNode: islandSceneRootNode!)
@@ -144,13 +144,13 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
                 
                 if node.name == "Alien"{
                     let positionVal = node.userData?.value(forKey: "position") as! NSValue
-                    let position = positionVal.cgPointValue
+                    let alienPos = positionVal.cgPointValue
                     
                     let player = entityManager.getPlayerEntities().first!
                     
                     guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else { break }
                     
-                    let alienEntity = Alien(alienColor: .Pink, position: position, targetAgent: playerAgent)
+                    let alienEntity = Alien(alienColor: .Pink, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: nil)
                     entityManager.addToWorld(alienEntity)
                 }
                 
@@ -206,6 +206,11 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         for entity in newEntities{
             entityManager.addToEntitySet(entity)
         }
+        
+        let bladeIslandPos = CGPoint(x: -250, y: 0)
+        let bladeIsland = BladeIsland(position: bladeIslandPos, bladeScalingFactor: 2.0)
+        entityManager.addToWorld(bladeIsland)
+        bladeIsland.moveSubnodesToWorld()
         
         stateMachine.enter(PlatformerLevelSceneActiveState.self)
     }
@@ -325,6 +330,13 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
             case CollisionConfiguration.Enemy.categoryMask:
                 print("Sending player damage notification...")
                 NotificationCenter.default.post(name: Notification.Name.PlayerDidTakeDamageNotification, object: nil, userInfo: nil)
+                if otherBody.node?.entity is Alien, let alienName = otherBody.node?.name{
+                    
+                    let userInfo = ["enemyName":alienName]
+
+                    NotificationCenter.default.post(name: Notification.Name.EnemyDidHitPlayerNotification, object: nil, userInfo: userInfo)
+                }
+                
                 break
             default:
                 break

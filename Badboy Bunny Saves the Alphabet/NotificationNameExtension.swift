@@ -19,4 +19,14 @@ extension Notification.Name{
     static let PlayerStartedBarrierContactNotification = Notification.Name(rawValue: "playerStartedBarrierContactNotification")
     static let PlayerStoppedBarrierContactNotification = Notification.Name(rawValue: "playerStoppedBarrierContactNotification")
     static let PlayerDidTakeDamageNotification = Notification.Name(rawValue: "playerDidTakeDamageNotification")
+    
+    static let PlayerStartedContactWithSpring = Notification.Name(rawValue: "playerStartedContactWithSpring")
+    static let PlayerEndedContactWithSpring = Notification.Name(rawValue: "playerEndedContactWithSpring")
+    static let PlayerStartedContactWithIce = Notification.Name(rawValue: "playerStartedContactWithIce")
+    static let PlayerEndedContactWithIce = Notification.Name(rawValue: "playerEndedContactWithIce")
+    
+    static let PlayerEnteredEnemyProximityNotification = Notification.Name(rawValue: "playerEnteredEnemyProximityNotification")
+    
+    static let PlayerExitedEnemyProximityNotification = Notification.Name("playerExitedEnemyProximityNotification")
+    static let EnemyDidHitPlayerNotification = Notification.Name(rawValue: "enemyDidHitPlayerNotification")
 }

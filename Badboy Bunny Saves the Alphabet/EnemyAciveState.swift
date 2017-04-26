@@ -1,36 +1,31 @@
 //
-//  PlatformerLevelSceneSuccessState.swift
+//  AlienActiveState.swift
 //  Badboy Bunny Saves the Alphabet
 //
-//  Created by Aleksander Makedonski on 4/25/17.
+//  Created by Aleksander Makedonski on 4/26/17.
 //  Copyright © 2017 AlexMakedonski. All rights reserved.
 //
 
 import Foundation
 import GameplayKit
+import SpriteKit
 
-class PlatformerLevelSceneSuccessState: GKState{
+
+class EnemyActiveState: GKState{
     
-    unowned let levelScene: PlatformerBaseScene
+    let enemyEntity: Enemy
     
-    init(levelScene: PlatformerBaseScene) {
-        self.levelScene = levelScene
+    init(enemyEntity: Enemy) {
+        self.enemyEntity = enemyEntity
+        super.init()
     }
-    
-
-    
-    //GKState LifeCycle
     
     override func didEnter(from previousState: GKState?) {
         super.didEnter(from: previousState)
-        
-        
     }
     
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
-       // print("Player now in the success state..")
-        
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -38,6 +33,4 @@ class PlatformerLevelSceneSuccessState: GKState{
         
         return false
     }
-    
-    
 }

@@ -31,7 +31,7 @@ class PortraitMotionResponderComponent: MotionResponderComponent{
                 appliedForceDeltaX = CGFloat(horizontalRotationRate)*150.00
             } **/
             
-            appliedForceDeltaX = CGFloat(horizontalAttitude*500.00)
+            appliedForceDeltaX = CGFloat(horizontalAttitude*adjustmentCoefficientX)
 
             
             
@@ -50,7 +50,7 @@ class PortraitMotionResponderComponent: MotionResponderComponent{
                 appliedForceDeltaY = CGFloat(verticalRotationRate)*150.00
             } **/
             
-            appliedForceDeltaY = CGFloat(verticalAttitude*500.00)
+            appliedForceDeltaY = CGFloat(verticalAttitude*adjustmentCoefficientY)
 
             
         }
